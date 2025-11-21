@@ -1,0 +1,165 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f5f3ef;
+  --foreground: #0f0f0f;
+  --charcoal: #1c1b1a;
+  --ink-black: #050505;
+  --soft-gold: #c9a97a;
+  --warm-gray: #b6aea4;
+  --technical-silver: #d8dadd;
+  --grid-line: rgba(28, 27, 26, 0.12);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-charcoal: var(--charcoal);
+  --color-ink-black: var(--ink-black);
+  --color-soft-gold: var(--soft-gold);
+  --color-warm-gray: var(--warm-gray);
+  --color-technical-silver: var(--technical-silver);
+  --font-sans: var(--font-couture-sans);
+  --font-serif: var(--font-couture-serif);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-couture-sans), -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+    Arial, sans-serif;
+  letter-spacing: 0.01em;
+}
+
+.brandboard-grid {
+  background-image: linear-gradient(
+      to right,
+      transparent 0,
+      transparent calc(100% - 1px),
+      var(--grid-line) calc(100% - 1px)
+    ),
+    linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent calc(100% - 1px),
+      var(--grid-line) calc(100% - 1px)
+    );
+  background-size: 56px 56px;
+}
+
+.texture-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  padding: 1.75rem;
+  border: 1px solid rgba(12, 12, 12, 0.08);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(240, 240, 240, 0.72));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25),
+    0 12px 32px rgba(12, 12, 12, 0.12);
+}
+
+.texture-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), transparent 60%);
+}
+
+.texture-dark {
+  background: linear-gradient(135deg, rgba(30, 30, 30, 0.86), rgba(12, 12, 12, 0.68));
+  color: #f4f4f4;
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    0 14px 36px rgba(10, 10, 10, 0.4);
+}
+
+.texture-gold {
+  background: linear-gradient(145deg, rgba(235, 220, 195, 0.95), rgba(201, 169, 122, 0.92));
+  color: #352c1f;
+}
+
+.pattern-line {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  border: 1px solid rgba(12, 12, 12, 0.08);
+  background-color: #fdfdfb;
+}
+
+.pattern-line::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(
+      90deg,
+      rgba(12, 12, 12, 0.08) 1px,
+      transparent 1px
+    ),
+    linear-gradient(180deg, rgba(12, 12, 12, 0.06) 1px, transparent 1px);
+  background-size: 52px 48px;
+  opacity: 0.8;
+}
+
+.pattern-line::after {
+  content: "";
+  position: absolute;
+  inset: 12%;
+  border: 1px dashed rgba(12, 12, 12, 0.4);
+  border-radius: 28% 72% 38% 62% / 54% 36% 64% 46%;
+  transform: rotate(-4deg);
+  opacity: 0.85;
+}
+
+.pattern-curve::after {
+  border-radius: 60% 40% 65% 35% / 40% 48% 52% 60%;
+  transform: rotate(6deg);
+}
+
+.pattern-grid::before {
+  background-image: linear-gradient(
+      90deg,
+      rgba(12, 12, 12, 0.16) 1px,
+      transparent 1px
+    ),
+    linear-gradient(180deg, rgba(12, 12, 12, 0.12) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.pattern-grid::after {
+  border-radius: 14px;
+  inset: 10%;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(12, 12, 12, 0.34);
+  transform: rotate(0deg);
+}
+
+.imagery-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(12, 12, 12, 0.08);
+  min-height: 220px;
+  display: flex;
+  align-items: flex-end;
+  padding: 1.75rem;
+  color: #f7f7f7;
+  letter-spacing: 0.04em;
+}
+
+.imagery-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.74), rgba(0, 0, 0, 0.1));
+  pointer-events: none;
+}
+
+.imagery-card span {
+  position: relative;
+  z-index: 1;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.28em;
+}
